@@ -17,6 +17,8 @@ body {
 }
 
 body {
+  margin: 0;
+  padding: 0;    
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
@@ -39,4 +41,95 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.site-header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+.site-header__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-header__logo {
+  font-size: 24px;
+}
+
+main {
+  padding: 20px;
+}
+
+.search-form {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#keyword {
+  width: 300px;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#search-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#search-btn:hover {
+  background-color: #45a049;
+}
+
+#results {
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.game {
+  position: relative;
+  padding: 5px 20px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border-radius: 5px;
+  line-height: 1.5;
+  justify-content: space-around;
+  font-family: "Noto Sans Japanese";
+  box-shadow: 1px 1px 1px #999;
+  margin-bottom: 20px;
+}
+
+.game:nth-of-type(even) {
+  background-color: #f9f9f930;
+  content: "";
+}
+
+.game:hover {
+  background-color: #f0f0f0;
+  box-shadow: 1px 1px 1px #666;
+}
+
+p {
+  margin: 0;
 }
