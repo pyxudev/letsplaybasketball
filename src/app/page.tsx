@@ -1,31 +1,29 @@
 "use client";
 export default function Home() {
   function search() {
-    if (typeof window !== 'undefined') {
-      const keyword = document.getElementById("keyword") as HTMLInputElement;
-      const api = 'NEXT_PUBLIC_API_URL';
-      fetch(api,
-        {
-          method: 'GET',
-          headers: {
-            "Content-Type": "application/json"
-          },
-          mode: 'cors',
-          body: JSON.stringify({ kw: keyword.value })
-        })
-        .then(response => response.json())
-        .then(data => {
-          const result = document.getElementById("results") as HTMLDivElement;
-          result.innerHTML = "";
-          for (let i = 1; i < Object.keys(data).length; i++) {
-            const div = document.createElement("div");
-            div.className = "game";
-            div.innerHTML = `<a href='${data[i].link}' target='_blank'><h3>チーム名：${data[i].teamname}</h3><p>参加条件：${data[i].requirements}</p><p>開催時間：${data[i].time}</p><p>場所：${data[i].address}</p></a>`;
-            result.appendChild(div);
-          }
-        })
-        .catch(error => console.error('Error:', error));
-    }
+    const keyword = document.getElementById("keyword") as HTMLInputElement;
+    const api = 'NEXT_PUBLIC_API_URL';
+    fetch(api,
+      {
+        method: 'GET',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        mode: 'cors',
+        body: JSON.stringify({ kw: keyword.value })
+      })
+      .then(response => response.json())
+      .then(data => {
+        const result = document.getElementById("results") as HTMLDivElement;
+        result.innerHTML = "";
+        for (let i = 1; i < Object.keys(data).length; i++) {
+          const div = document.createElement("div");
+          div.className = "game";
+          div.innerHTML = `<a href='${data[i].link}' target='_blank'><h3>チーム名：${data[i].teamname}</h3><p>参加条件：${data[i].requirements}</p><p>開催時間：${data[i].time}</p><p>場所：${data[i].address}</p></a>`;
+          result.appendChild(div);
+        }
+      })
+      .catch(error => console.error('Error:', error));
   }
   return (
     // <>
