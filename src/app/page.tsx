@@ -5,7 +5,7 @@ export default function Home() {
     const api = 'NEXT_PUBLIC_API_URL';
     fetch(api,
       {
-        method: 'GET',
+        method: 'POST',
         headers: {
           "Content-Type": "application/json"
         },
