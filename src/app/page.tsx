@@ -5,11 +5,12 @@ export default function Home() {
     const api = process.env.NEXT_PUBLIC_API_URL!;
     const res = await fetch(api as string,
       {
-        method: 'POST',
+        method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "x-forwarded-proto": "https"
         },
-        body: JSON.stringify({ kw: keyword.value }),
+        body: JSON.stringify({ "kw": keyword.value }),
         credentials: "omit"
       });
     const data = await res.json();
