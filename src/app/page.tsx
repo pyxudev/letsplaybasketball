@@ -2,8 +2,8 @@
 export default function Home() {
   function search() {
     const keyword = document.getElementById("keyword") as HTMLInputElement;
-    const api = process.env.NEXT_PUBLIC_API_URL;
-    fetch(api,
+    const api = process.env.NEXT_PUBLIC_API_URL!;
+    fetch(api as string,
       {
         method: 'POST',
         headers: {
