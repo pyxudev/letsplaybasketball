@@ -9,7 +9,6 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json"
         },
-        mode: 'cors',
         body: JSON.stringify({ kw: keyword.value })
       })
       .then(response => response.json())
