@@ -2,7 +2,7 @@
 export default function Home() {
   function search() {
     const keyword = document.getElementById("keyword") as HTMLInputElement;
-    const api = 'NEXT_PUBLIC_API_URL';
+    const api = process.env.NEXT_PUBLIC_API_URL;
     fetch(api,
       {
         method: 'POST',
@@ -26,12 +26,12 @@ export default function Home() {
       .catch(error => console.error('Error:', error));
   }
   return (
-    // <>
-    //   <header className="site-header">
-    //     <div className="wrapper site-header__wrapper">
-    //       <div className="site-header__logo">バスケやろうぜ</div>
-    //     </div>
-    //   </header>
+    <>
+      <header className="site-header">
+        <div className="wrapper site-header__wrapper">
+          <div className="site-header__logo">バスケやろうぜ</div>
+        </div>
+      </header>
       <main>
         <div className="search-form">
           <h1>東京・千葉・埼玉検索</h1>
@@ -43,6 +43,6 @@ export default function Home() {
 
         <div id="results"></div>
       </main>
-    // </>
+    </>
   );
 }
