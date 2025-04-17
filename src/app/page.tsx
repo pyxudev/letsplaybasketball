@@ -9,7 +9,8 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ kw: keyword.value })
+        body: JSON.stringify({ kw: keyword.value }),
+        credentials: "omit"
       })
       .then(response => response.json())
       .then(data => {
