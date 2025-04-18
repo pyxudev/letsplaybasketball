@@ -2,21 +2,20 @@
 export default function Home() {
   async function search() {
     const keyword = document.getElementById("keyword") as HTMLInputElement;
-    const api = process.env.NEXT_PUBLIC_API_URL!;
-    const res = await fetch(api as string,
+    const res = await fetch('/api/search',
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "x-forwarded-proto": "https"
         },
-        body: JSON.stringify({ "kw": keyword.value }),
-        credentials: "omit"
+        body: JSON.stringify({ "kw": keyword.value })
       });
     const data = await res.json();
+    console.log(data);
     const result = document.getElementById("results") as HTMLDivElement;
     result.innerHTML = "";
-    for (let i = 1; i < Object.keys(data).length; i++) {
+    for (let i = 1; i < Object.keys(data).length+1; i++) {
       const div = document.createElement("div");
       div.className = "game";
       div.innerHTML = `<a href='${data[i].link}' target='_blank'><h3>チーム名：${data[i].teamname}</h3><p>参加条件：${data[i].requirements}</p><p>開催時間：${data[i].time}</p><p>場所：${data[i].address}</p></a>`;
