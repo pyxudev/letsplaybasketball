@@ -132,8 +132,8 @@ a {
 }
 
 .game:hover {
-  background-color: #f0f0f0;
-  box-shadow: 1px 1px 1px #666;
+  backgrand-color: #696969;
+  box-shadow: 1px 1px 1px #666666;
 }
 
 p {
