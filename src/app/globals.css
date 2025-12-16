@@ -122,7 +122,7 @@ a {
 }
 
 .game:nth-of-type(even) {
-  color: var(--foreground);
+  color: #ffffff;
   background-color: var(--background);
   content: "";
 }
