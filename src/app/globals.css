@@ -112,7 +112,7 @@ a {
   position: relative;
   padding: 5px 20px;
   border: 1px solid #ccc;
-  background-color: var(--foreground);
+  background-color: #ffffff;
   border-radius: 5px;
   line-height: 1.5;
   justify-content: space-around;
@@ -122,7 +122,7 @@ a {
 }
 
 .game:nth-of-type(even) {
-  background-color: var(--background);
+  background-color: #333333;
   content: "";
 }
 
