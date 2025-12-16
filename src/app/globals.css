@@ -126,7 +126,7 @@ a {
   content: "";
 }
 
-.game:nth-of-type(even) p,
+.game:nth-of-type(even) h3,
 .game:nth-of-type(even) p {
   color: var(--foreground);
 }
