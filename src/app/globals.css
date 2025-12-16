@@ -122,9 +122,12 @@ a {
 }
 
 .game:nth-of-type(even) {
-  color: #ffffff;
   background-color: var(--background);
   content: "";
+}
+
+.game:nth-of-type(even) p {
+  color: var(--foreground);
 }
 
 .game:hover {
